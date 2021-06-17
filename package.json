@@ -1,0 +1,68 @@
+{
+    "name": "wodo-payment-api",
+    "version": "1.0.0",
+    "description": "Payment api to provide blockchain integration",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "start:watch": "nodemon",
+        "prestart:prod": "tsc",
+        "start:prod": "node dist/main.js",
+        "test": "jest --config=jest.json",
+        "test:watch": "jest --watch --config=jest.json",
+        "test:coverage": "jest --config=jest.json --coverage --coverageDirectory=coverage"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://gitlab.com/kuttechnology/wodo-payment-api.git"
+    },
+    "author": "serhat.tanrikut@gmail.com, bekir.dag@gmail.com",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://gitlab.com/kuttechnology/wodo-payment-api.git"
+    },
+    "homepage": "https://gitlab.com/kuttechnology/wodo-payment-api.git#readme",
+    "dependencies": {
+        "@bananocoin/bananojs": "^2.4.7",
+        "@nestjs/common": "^7.5.0",
+        "@nestjs/core": "^7.5.0",
+        "@nestjs/microservices": "^7.5.0",
+        "@nestjs/platform-express": "^7.5.0",
+        "@nestjs/schedule": "^0.4.3",
+        "@nestjs/swagger": "^4.8.0",
+        "@nestjs/testing": "^7.5.0",
+        "@nestjs/websockets": "^7.5.0",
+        "@prisma/client": "^2.21.0",
+        "argon2": "^0.26.2",
+        "bignumber.js": "^5.0.0",
+        "blakejs": "^1.1.0",
+        "class-transformer": "^0.2.3",
+        "class-validator": "^0.11.1",
+        "crypto": "^1.0.1",
+        "crypto-js": "^4.0.0",
+        "jsonwebtoken": "^8.5.1",
+        "mysql": "^2.18.1",
+        "passport-jwt": "^4.0.0",
+        "reflect-metadata": "^0.1.13",
+        "rxjs": "^6.5.5",
+        "slug": "^1.1.0",
+        "swagger-ui-express": "^4.1.4",
+        "tweetnacl": "^1.0.3",
+        "typescript": "^3.8.3",
+        "ts-node": "^8.9.1",
+        "@types/node": "^13.13.4",
+        "@types/cron": "^1.7.2",
+        "prisma": "^2.21.2"
+    },
+    "devDependencies": {
+        "@types/jest": "^25.2.1",
+        "@types/node": "^13.13.4",
+        "atob": ">=2.1.0",
+        "deep-extend": ">=0.5.1",
+        "extend": ">=3.0.2",
+        "jest": "^25.5.3",
+        "nodemon": "^1.19.4",
+        "supertest": "^3.4.2",
+        "ts-jest": "^25.4.0"
+    }
+}

@@ -1,0 +1,122 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "mysql"
+  url = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id            Int         @default(autoincrement()) @id
+  email         String      @unique
+  image         String?
+  password      String?
+  username      String?     @unique
+  deleted       Boolean
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @default(now())
+  wallets        Wallet[]   @relation("UserWallets")
+}
+
+model Wallet {
+  id            Int         @default(autoincrement()) @id
+  name          String      @unique
+  description   String
+  balance       Int
+  pending       Int
+  enabled       Boolean
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @default(now())
+  seed          String?
+  mnemonic      String?
+  deleted       Boolean
+  user          User        @relation("UserWallets", fields: [userId], references: [id])
+  userId        Int
+  accounts      Account[]   @relation("WalletAccounts")
+}
+
+model Account {
+  id            Int         @default(autoincrement()) @id
+  name          String      @unique
+  address       String      @unique
+  description   String
+  balance       Int
+  pending       Int
+  enabled       Boolean
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @default(now())
+  deleted       Boolean
+  wallet        Wallet        @relation("WalletAccounts", fields: [walletId], references: [id])
+  walletId      Int
+}
+
+model WalletType {
+  id            Int         @default(autoincrement()) @id
+  name          String      @unique
+  type          Int      @unique
+  description   String
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @default(now())
+}
+
+model TransactionHistory {
+  id                Int         @default(autoincrement()) @id
+  senderId          Int
+  senderAccountId   Int
+  receiverId        Int
+  receiverAccountId Int
+  assetId           Int
+  amount            Int
+  createdAt         DateTime    @default(now())
+}
+
+model GameServer {
+  id                Int         @default(autoincrement()) @id
+  type              Int
+  assetId           Int
+  data              Json
+  totalAmount       Int
+  revenue           Int
+  createdAt         DateTime    @default(now())
+  startedAt         DateTime    @default(now())
+  finishedAt        DateTime    @default(now())
+}
+
+model GameServerData {
+  id                Int         @default(autoincrement()) @id
+  type              Int
+  assetId           Int
+  data              Json
+  totalAmount       Int
+  revenue           Int
+  createdAt         DateTime    @default(now())
+  startedAt         DateTime    @default(now())
+  finishedAt        DateTime    @default(now())
+}
+
+model GameServerUser {
+  id                Int         @default(autoincrement()) @id
+  userId            Int
+  gameServerId      Int
+  assetId           Int
+  status            Int
+  amount            Int
+  joinedAt          DateTime    @default(now())
+  leftAt            DateTime    @default(now())
+}
+
+model GameServerUserData {
+  id                Int         @default(autoincrement()) @id
+  userId            Int
+  gameServerId      Int
+  gameType          Int
+  assetId           Int
+  amount            Int
+  reward            Int
+  joinedAt          DateTime    @default(now())
+  leftAt            DateTime    @default(now())
+}

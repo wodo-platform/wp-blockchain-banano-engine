@@ -1,0 +1,23 @@
+-- CreateTable
+CREATE TABLE `GameServerData` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `type` INTEGER NOT NULL,
+    `assetId` INTEGER NOT NULL,
+    `data` JSON NOT NULL,
+    `totalAmount` INTEGER NOT NULL,
+    `revenue` INTEGER NOT NULL,
+    `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `startedAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `finishedAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `GameServerUser` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `userId` INTEGER NOT NULL,
+    `gameServerId` INTEGER NOT NULL,
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

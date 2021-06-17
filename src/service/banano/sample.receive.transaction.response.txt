@@ -1,0 +1,12 @@
+ {
+     pendingCount: 1,
+     pendingBlocks: [
+         '5B66F60A48008A3BE515433B400783F644B565525E39FB2884489777F1B21C58'
+     ],
+     receiveCount: 1,
+     receiveBlocks: [
+         '669BD679C3B331688DB4188F637224E0DD75E2ABCBAC76A06146117D0FD0FFFD'
+     ],
+     pendingMessage: 'pending 1 blocks, of max 10.',
+     receiveMessage: 'received 1 blocks.'
+ }
