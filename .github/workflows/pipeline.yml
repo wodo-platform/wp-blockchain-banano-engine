@@ -80,6 +80,9 @@ jobs:
         with:
           version: v3.4.0
 
+      - name: Add dependency chart repos
+        run: helm repo add wodo-helm-charts https://wodo-platform.github.io/wodo-helm-charts
+
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.2.1
         with:
