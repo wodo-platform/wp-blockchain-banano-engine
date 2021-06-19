@@ -87,5 +87,6 @@ jobs:
         uses: helm/chart-releaser-action@v1.2.1
         with:
           charts_repo_url: https://wodo-platform.github.io/wodo-helm-charts
+          config: cr.yaml
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
