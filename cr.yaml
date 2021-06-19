@@ -1,1 +1,2 @@
-pages-branch: https://github.com/wodo-platform/wodo-helm-charts.git
+git-repo: https://github.com/wodo-platform/wodo-helm-charts.git
+pages-branch: gh-pages
