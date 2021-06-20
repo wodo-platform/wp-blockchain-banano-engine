@@ -33,7 +33,6 @@ USER nonroot
 
 WORKDIR /app
 
-CMD ["ls","-l"]
 ARG PORT=3000
 ENV PORT=${PORT}
 
