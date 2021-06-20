@@ -1,6 +1,0 @@
-dependencies:
-- name: node-helm-chart
-  repository: https://wodo-platform.github.io/wodo-helm-charts/
-  version: 1.0.3
-digest: sha256:985f2a54aedd6ea0e5fd61a4ab795c6bc3657f704287d3c7b49bb1210a794e04
-generated: "2021-06-19T21:34:39.377035+02:00"
