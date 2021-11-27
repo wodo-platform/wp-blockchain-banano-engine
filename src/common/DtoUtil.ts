@@ -1,10 +1,10 @@
 import { Wallet } from ".prisma/client";
 import { Prisma } from "@prisma/client";
-import { WalletDto } from "../dto/wallet";
+import { BananoWalletDto } from "src/dto/wallet";
 
 export class DtoUtil {
-    convert2WalletDto(wallet : Wallet) :  WalletDto{
-        let walletDto = new WalletDto();
+    convert2WalletDto(wallet : Wallet) :  BananoWalletDto{
+        let walletDto = new BananoWalletDto();
         walletDto.id = wallet.id;
         walletDto.name = wallet.name;
         walletDto.description = wallet.description;

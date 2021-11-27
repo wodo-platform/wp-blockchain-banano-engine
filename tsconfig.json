@@ -1,25 +1,17 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "declaration": false,
-    "noImplicitAny": false,
+    "declaration": true,
     "removeComments": true,
-    "noLib": false,
-    "lib": ["es2017","DOM"],
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es6",
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
     "sourceMap": true,
-    "allowJs": true,
     "outDir": "./dist",
-    "esModuleInterop": true
-  },
-    "include": [
-    "src/**/*",
-    "src/decs.d.ts"
-  ],
-    "exclude": [
-    "node_modules",
-    "**/*.spec.ts"
-  ]
+    "baseUrl": "./",
+    "incremental": false,
+    "allowJs": true
+  
+  }
 }

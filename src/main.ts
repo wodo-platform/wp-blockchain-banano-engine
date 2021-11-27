@@ -5,11 +5,11 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 async function bootstrap() {
   const appOptions = {cors: true};
   const app = await NestFactory.create(ApplicationModule, appOptions);
-  app.setGlobalPrefix('api');
+  //app.setGlobalPrefix('api');
 
   const options = new DocumentBuilder()
-    .setTitle('Wodo Payment API')
-    .setDescription('Wodo Payment API empowers blockchain technology to speed up payment transactions')
+    .setTitle('Blockchain Banano Engine')
+    .setDescription('Blockchain Banano Engine  API')
     .setVersion('1.0')
     .setBasePath('api')
     .addBearerAuth()
@@ -17,6 +17,6 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('/docs', app, document);
 
-  await app.listen(3000);
+  await app.listen(3001);
 }
 bootstrap();

@@ -1,2 +1,2 @@
-export { AccountCreateDto } from './account-create.dto';
-export { AccountDto } from './account.dto';
+export { BananoAccountCreateDto } from './banano.account.create.dto';
+export { BananoAccountDto } from './banano.account.dto';

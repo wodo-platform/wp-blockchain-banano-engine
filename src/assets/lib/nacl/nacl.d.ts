@@ -56,7 +56,7 @@ declare namespace nacl {
         readonly overheadLength: number;
     }
 
-    namespace sign {
+    export namespace sign {
         export interface detached {
             (msg: Uint8Array, secretKey: Uint8Array): Uint8Array;
             verify(msg: Uint8Array, sig: Uint8Array, publicKey: Uint8Array): boolean;

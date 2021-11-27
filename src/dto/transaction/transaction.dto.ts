@@ -3,9 +3,9 @@
   
     constructor() {};
 
-    /*constructor(userId: String, asssetId: String, from: String, to: String, amount: number, memo: String) {
+    /*constructor(userId: String, assetId: String, from: String, to: String, amount: number, memo: String) {
         this.userId = userId;
-        this.asssetId = asssetId;
+        this.assetId = assetId;
         this.from = from;
         this.to = to;
         this.amount = amount;
@@ -13,7 +13,7 @@
     }*/
 
     userId: string;
-    asssetId: string;
+    assetId: string;
     from: string;
     to: string;
     amount: string;
