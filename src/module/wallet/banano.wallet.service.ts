@@ -30,6 +30,12 @@ export class BananoWalletService implements BlockchainWalletApi{
     return wallet;
   }
 
+  /**
+   * 
+   * @param userId 
+   * @param walletDto 
+   * @returns 
+   */
   async createWalletWithSeed(userId: number, walletDto : BananoWalletCreateWithSeed): Promise<BlockchainWallet> {
 
     BananoWalletServiceUtil.validateWalletType(walletDto.type);

@@ -4,7 +4,9 @@ import { BananoApiWallet } from "../banano/model/banano.api.wallet";
 import { BananoApiWalletAccount } from "../banano/model/banano.api.wallet.account";
 import { BlockchainValidationUtil } from '@wodo-platform/wp-shared-lib/dist/wodoplatform/blockchain/blockchain.validation.util';
 
-
+/**
+ * Util class to simolfy the service implementation
+ */
 export class BananoWalletServiceUtil {
 
     public static convert2BananoWalletCreateDto(userId: number, bananoWallet: BananoApiWallet) {

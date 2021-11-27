@@ -24,8 +24,7 @@ import { BananoWalletController } from './banano.wallet.controller';
 })
 export class BananoWalletModule implements NestModule {
   public configure(consumer: MiddlewareConsumer) {
-    consumer
-      .apply(AuthMiddleware)
+    consumer.apply(AuthMiddleware)
       .forRoutes({path: 'wallets', method: RequestMethod.GET}, {path: 'wallets', method: RequestMethod.PUT});
   }
 }

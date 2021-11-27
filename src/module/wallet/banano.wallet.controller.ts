@@ -1,4 +1,4 @@
-import { Get, Post, Body, Put, Delete, Param, Query, Controller, UsePipes, ParseIntPipe } from '@nestjs/common';
+import { Get, Post, Body, Put, Delete, Param, Query, Controller, ParseIntPipe } from '@nestjs/common';
 import { ApiParam, ApiBearerAuth, ApiResponse, ApiOperation, ApiTags, ApiQuery, } from '@nestjs/swagger';
 import { BlockchainWallet } from '@wodo-platform/wp-shared-lib/dist/wodoplatform/blockchain/api/blockchain.wallet';
 import { BananoWalletCreateDto, BananoWalletCreateWithSeed, BananoWalletDto } from 'src/dto/wallet';
