@@ -1,6 +1,6 @@
 {
     "name": "@wodo-platform/wp-blockchain-banano-engine",
-    "version": "1.0.11",
+    "version": "1.0.12",
     "description": "Payment api to provide blockchain integration",
     "publishConfig": {
         "registry": "https://npm.pkg.github.com"
