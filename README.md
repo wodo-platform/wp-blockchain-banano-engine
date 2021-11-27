@@ -2,7 +2,7 @@
   <a href="http://wodoplatform.io/" target="blank"><img src="https://github.com/wodo-platform/wodo-docs/blob/main/images/wodo_logo.png" width="320" alt="Wodo Platform" /></a>
 </p>
 
-<h2> Wodo Platform Blockchain Banano Blockchain Engine
+<h2> Wodo Platform Blockchain Banano Engine
  </h2>
 
 <div align="center">

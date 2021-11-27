@@ -2,6 +2,10 @@
     "name": "@wodo-platform/wp-blockchain-banano-engine",
     "version": "1.0.12",
     "description": "Payment api to provide blockchain integration",
+    "author": "Wodo Platform",
+    "repository": {
+        "url": "git@github.com:wodo-platform/wp-blockchain-banano-engine.git"
+    },
     "publishConfig": {
         "registry": "https://npm.pkg.github.com"
     },
@@ -25,11 +29,6 @@
         "test:e2e": "jest --config ./test/jest-e2e.json",
         "test:unit": "jest --config ./test/jest-unit.json"
     },
-    "repository": {
-        "type": "git",
-        "url": "git@github.com:wodo-platform/wp-blockchain-banano-engine.git"
-    },
-    "author": "serhat.tanrikut@gmail.com, bekir.dag@gmail.com",
     "bugs": {
         "url": "https://gitlab.com/wodo-platform/wp-blockchain-banano-engine.git"
     },
@@ -102,5 +101,22 @@
         "atob": ">=2.1.0",
         "deep-extend": ">=0.5.1",
         "extend": ">=3.0.2"
+    },
+    "jest": {
+        "moduleFileExtensions": [
+            "js",
+            "json",
+            "ts"
+        ],
+        "rootDir": "src",
+        "testRegex": ".*\\.spec\\.ts$",
+        "transform": {
+            "^.+\\.(t|j)s$": "ts-jest"
+        },
+        "collectCoverageFrom": [
+            "**/*.(t|j)s"
+        ],
+        "coverageDirectory": "../coverage",
+        "testEnvironment": "node"
     }
 }
