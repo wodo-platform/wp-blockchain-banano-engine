@@ -1,37 +1,42 @@
-# The image is built on top of one that has node preinstalled
-FROM bitnami/node:14 as builder
+FROM node:14.18-alpine As development
 
-ENV NODE_ENV="production"
+ARG NPM_TOKEN
 
-# Copy app's source code to the /app directory
-COPY . /app
+#ENV NPM_EMAIL="wodo-platform@users.noreply.github.com"
+#ENV NPM_REGISTRY="https://npm.pkg.github.com"
+#ENV NPM_SCOPE="@wodo-platform"
+#ENV NPM_TOKEN=${NPM_TOKEN}
 
-# The application's directory will be the working directory
-WORKDIR /app
+WORKDIR /usr/src/app
 
-RUN chmod 777 -R /app/*
+COPY package*.json ./
 
-# Install dependencies
-RUN npm install -g --unsafe-perm
+RUN echo "@wodo-platform:registry=https://npm.pkg.github.com/" > .npmrc 
+RUN echo "//npm.pkg.github.com/:_authToken=${NPM_TOKEN}" >> .npmrc && \
+    npm install  && \
+    rm -f .npmrc
 
 RUN npm install
+COPY . .
+RUN npm run build
 
-RUN npx prisma generate
+
+FROM node:14.18-alpine as production
+
+ARG NODE_ENV=production
+ENV NODE_ENV=${NODE_ENV}
 
 
-# Only copy the required distribution code to the runner
-FROM bitnami/node:14-prod
-ENV NODE_ENV="production"
+WORKDIR /usr/src/app
 
-# Copy the application code
-COPY --from=builder /app /app
+COPY package*.json ./
 
-# Create a non-root user
-RUN useradd -r -u 1001 -g root nonroot
-RUN chown -R nonroot /app
-USER nonroot
+COPY . .
 
-WORKDIR /app
+# TODO: find a better way to bundle dependencies with nestjs. 
+COPY --from=development /usr/src/app/node_modules ./node_modules
+
+COPY --from=development /usr/src/app/dist ./dist
 
 ARG PORT=3000
 ENV PORT=${PORT}
@@ -39,4 +44,4 @@ ENV PORT=${PORT}
 EXPOSE ${PORT}
 
 # Start the application
-CMD ["npm", "start"]
+CMD ["npm", "run", "start:prod"]
