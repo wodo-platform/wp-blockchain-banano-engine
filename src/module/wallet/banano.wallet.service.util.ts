@@ -1,5 +1,5 @@
-import { BananoAccountCreateDto } from "src/dto/account";
-import { BananoWalletCreateDto } from "src/dto/wallet";
+import { BananoAccountCreateDto } from "../../dto/account/banano.account.create.dto";
+import { BananoWalletCreateDto } from "../../dto/wallet/banano.wallet.create.dto";
 import { BananoApiWallet } from "../banano/model/banano.api.wallet";
 import { BananoApiWalletAccount } from "../banano/model/banano.api.wallet.account";
 import { BlockchainValidationUtil } from '@wodo-platform/wp-shared-lib/dist/wodoplatform/blockchain/blockchain.validation.util';

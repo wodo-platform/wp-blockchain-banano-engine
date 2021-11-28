@@ -2,6 +2,8 @@ export class BananoAccountDto {
     id:       number;
     name:           string;
     address:        string;
+    secret:         string;
+    publicKey:       string;
     description:    string;
     balance:        number;
     pending:        number;

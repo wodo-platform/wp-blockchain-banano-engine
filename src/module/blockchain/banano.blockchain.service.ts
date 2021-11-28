@@ -4,7 +4,7 @@ import BigNumber from 'bignumber.js';
 import AssetType, { ASSET_BANANO } from '../../common/asset.type';
 import { BananoTransaction } from '../banano/model/banano.transaction';
 import { BlockchainTransaction } from "@wodo-platform/wp-shared-lib/dist/wodoplatform/blockchain/api/blockchain.transaction"
-import User from '../user/model/user';
+import {User} from '../user/model/user';
 import PaymentNotification from '../notification/model/payment.notification';
 import { PaymentNotificationService } from '../notification/payment.notification.service';
 import { TransactionHistoryCreateParams } from '../transaction/model/transaction.history.create.params';

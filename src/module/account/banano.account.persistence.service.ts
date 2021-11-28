@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { BananoAccountCreateDto } from 'src/dto/account';
-import Account from '../../module/account/model/account';
+import { Account } from '@prisma/client';
+import { BananoAccountCreateDto } from 'src/dto/account/banano.account.create.dto';
 import { PrismaService } from '../../service/prisma.service';
 
 @Injectable()
-export class AccountService {
+export class BananoAccountPersistenceService {
   constructor(private prisma: PrismaService) {}
 
   async findAll(userId: number, walletId: number): Promise<Account[]> {
@@ -65,6 +65,8 @@ export class AccountService {
       name: payload.name,
       address: payload.address,
       description: payload.description,
+      secret: payload.secret,
+      publicKey: payload.publicKey,
       enabled: payload.enabled,
       deleted: false,
       balance: 0,

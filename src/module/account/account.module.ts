@@ -1,6 +1,6 @@
 import { MiddlewareConsumer, Module, NestModule, RequestMethod } from '@nestjs/common';
-import { AccountController } from './account.controller';
-import { AccountService } from './account.service';
+import { BananoAccountController } from './banano.account.controller';
+import { BananoAccountService } from './banano.account.service';
 import { AuthMiddleware } from '../../middleware/auth/auth.middleware';
 import { UserModule } from '../user/user.module';
 import { PrismaService } from '../../service/prisma.service';
@@ -10,11 +10,11 @@ import { PrismaService } from '../../service/prisma.service';
     UserModule
   ],
   providers: [
-    AccountService,
+    BananoAccountService,
     PrismaService
   ],
   controllers: [
-    AccountController
+    BananoAccountController
   ]
 })
 export class AccountModule implements NestModule {

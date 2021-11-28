@@ -6,6 +6,8 @@ import { UtilService } from '../util/util.service';
 import { BananoApiWallet } from "./model/banano.api.wallet";
 import { WALLET_TYPE_BIP32, WalletType } from "@wodo-platform/wp-shared-lib/dist/wodoplatform/blockchain/api/blockchain.wallet.type"
 import { BananoApiWalletAccount } from './model/banano.api.wallet.account';
+import * as util from 'tweetnacl-util';
+
 
 @Injectable()
 export class BananoApiWalletService {
@@ -44,11 +46,15 @@ export class BananoApiWalletService {
     }
 
     let wallet: BananoApiWallet = {
+      id : "",
       name: name,
       description: description,
       type: walletType,
       seedBytes: this.utilService.hex.toUint8(seed),
       seed: seed,
+      mnemonic: "",
+      deleted: false,
+      userId : userId,
       balance: new BigNumber(0),
       pending: new BigNumber(0),
       balanceRaw: new BigNumber(0),
@@ -111,13 +117,18 @@ export class BananoApiWalletService {
     if (accountName) {
       accountName = accountId;
     }
-
+    let publicKey:string = util.encodeBase64(accountKeyPair.publicKey)
+    let privateKey:string = util.encodeBase64(accountKeyPair.secretKey)
     const newAccount: BananoApiWalletAccount = {
       id: accountId,
       name: accountName,
       description: "banano account description",
       frontier: null,
-      secret: accountBytes,
+      address: accountId,
+      secret: privateKey,
+      secretBytes: accountBytes,
+      publicKey: publicKey,
+      publicBytes: accountKeyPair.publicKey,
       keyPair: accountKeyPair,
       balance: new BigNumber(0),
       pending: new BigNumber(0),
@@ -126,7 +137,8 @@ export class BananoApiWalletService {
       balanceFiat: 0,
       pendingFiat: 0,
       index: index,
-      enabled: true
+      enabled: true,
+      deleted: false
     };
 
     return newAccount;

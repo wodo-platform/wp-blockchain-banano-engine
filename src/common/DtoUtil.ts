@@ -1,6 +1,6 @@
 import { Wallet } from ".prisma/client";
 import { Prisma } from "@prisma/client";
-import { BananoWalletDto } from "src/dto/wallet";
+import { BananoWalletDto } from "src/dto/wallet/banano.wallet.dto";
 
 export class DtoUtil {
     convert2WalletDto(wallet : Wallet) :  BananoWalletDto{

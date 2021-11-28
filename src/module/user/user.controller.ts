@@ -1,10 +1,12 @@
 import { Get, Post, Body, Put, Delete, Param, Query, Controller, UsePipes, ParseIntPipe, ParseBoolPipe } from '@nestjs/common';
 import { UserService } from './user.service';
 import { UserRO } from './user.interface';
-import { UserCreateDto, UpdateUserDto, LoginUserDto } from '../../dto/user';
+import { UserCreateDto } from '../../dto/user/user.create.dto';
+import { UpdateUserDto } from '../../dto/user/user.update.dto';
+import { LoginUserDto } from '../../dto/user/user.login.dto';
 import { ValidationPipe } from '../../common/pipes/validation.pipe';
 import {ApiParam,ApiBearerAuth,ApiResponse,ApiOperation, ApiTags, ApiQuery,} from '@nestjs/swagger';
-import User from '../../module/user/model/user';
+import { User } from '../../module/user/model/user';
 
 @ApiBearerAuth()
 @ApiTags('users')
@@ -31,7 +33,7 @@ export class UserController {
     }
   }
 
-  @ApiOperation({ summary: 'Find user by account address.' })
+  /*@ApiOperation({ summary: 'Find user by account address.' })
   @ApiParam({ name: "accountAddress", description: "account address that user has.", required: true, allowEmptyValue: true })
   @ApiResponse({ status: 200, description: 'Return user found by id..' })
   @Get('account/:accountAddress')
@@ -39,7 +41,7 @@ export class UserController {
 
     let user: User = await this.userService.findUserByAccountAddressWithChilds(accountAddress)
     return user;
-  }
+  }*/
 
 
   @ApiOperation({ summary: 'Find users. If query string parameters are provided, the results will be filtered by the given query string params.' })

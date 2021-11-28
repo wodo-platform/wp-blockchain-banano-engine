@@ -1,4 +1,4 @@
-import { BananoAccountCreateDto } from "../account";
+import { BananoAccountCreateDto } from "../account/banano.account.create.dto";
 
 export class BananoWalletCreateWithSeed {
     name:           string;

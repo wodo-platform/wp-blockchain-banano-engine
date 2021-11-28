@@ -1,6 +1,6 @@
 import Wallet from "../../wallet/model/banano.wallet";
 
-export default interface User {
+export interface User {
     id: number;
     email: string;
     image: string | null;

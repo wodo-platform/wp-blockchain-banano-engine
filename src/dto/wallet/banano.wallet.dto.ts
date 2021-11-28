@@ -16,5 +16,5 @@ export class BananoWalletDto {
     updatedAt:      Date;
     userId:         number;
     user:           UserDto;
-    accounts:       BananoAccountDto[];
+    accounts?:       BananoAccountDto[];
   }

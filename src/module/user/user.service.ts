@@ -1,5 +1,7 @@
 import { forwardRef, Inject, Injectable, Logger } from '@nestjs/common';
-import { UserCreateDto, LoginUserDto, UpdateUserDto } from '../../dto/user/';
+import { UserCreateDto } from '../../dto/user/user.create.dto';
+import { UpdateUserDto } from '../../dto/user/user.update.dto';
+import { LoginUserDto } from '../../dto/user/user.login.dto';
 const jwt = require('jsonwebtoken');
 import { SECRET } from '../../config';
 import { UserRO } from './user.interface';
@@ -8,7 +10,7 @@ import { HttpStatus } from '@nestjs/common';
 import * as argon2 from 'argon2';
 import { PrismaService } from '../../service/prisma.service';
 import { BananoWalletService } from '../wallet/banano.wallet.service';
-import User from './model/user'
+import { User } from './model/user'
 import { WALLET_TYPE_BIP32 } from '@wodo-platform/wp-shared-lib/dist/wodoplatform/blockchain/api/blockchain.wallet.type';
 
 const select = {
@@ -127,13 +129,13 @@ export class UserService {
           { 
             id : id 
           }, 
-          include: {
+          /*include: {
             wallets: {
               include: {
                 accounts:true
               }
             }
-          }
+          }*/
       }
     ) as User;
     return  user ;
@@ -158,19 +160,19 @@ export class UserService {
           { 
             email
           }, 
-          include: {
+          /*include: {
             wallets: {
               include: {
                 accounts:true
               }
             }
-          }
+          }*/
       }
     ) as User;
     return user;
   }
 
-  async findUserByAccountAddressWithChilds(accountAddress: string): Promise<User>{
+  /*async findUserByAccountAddressWithChilds(accountAddress: string): Promise<User>{
     this.logger.debug(`findUserByAccountAddressWithChilds: account address[${accountAddress}]`);
     const user:User = await this.prisma.user.findFirst(
       { 
@@ -200,7 +202,7 @@ export class UserService {
       }
     ) as User;
     return user;
-  }
+  }*/
 
   public generateJWT(user) {
     let today = new Date();

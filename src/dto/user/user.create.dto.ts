@@ -1,5 +1,4 @@
 import { IsNotEmpty } from 'class-validator';
-import { BananoWalletCreateDto } from '../wallet';
 
 export class UserCreateDto {
 
@@ -14,6 +13,6 @@ export class UserCreateDto {
 
   readonly seed: string;
 
-  readonly wallets: BananoWalletCreateDto[];
+  //readonly wallets: BananoWalletCreateDto[];
 
 }

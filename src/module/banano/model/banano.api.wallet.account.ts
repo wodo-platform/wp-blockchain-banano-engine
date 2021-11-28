@@ -3,13 +3,11 @@ import { BlockchainWalletAccount } from "@wodo-platform/wp-shared-lib/dist/wodop
 
 
 export interface BananoApiWalletAccount extends BlockchainWalletAccount {
-    id: string;
     frontier: string|null;
-    secret: any;
     keyPair: any;
+    secretBytes: any,
+    publicBytes: any,
     index: number;
-    balance: BigNumber;
-    pending: BigNumber;
     balanceRaw: BigNumber;
     pendingRaw: BigNumber;
     balanceFiat: number;
