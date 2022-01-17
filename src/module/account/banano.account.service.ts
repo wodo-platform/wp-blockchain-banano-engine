@@ -12,6 +12,21 @@ export class BananoAccountService implements BlockchainAccountApi {
   
     constructor() {}
 
+
+    /**
+     * 
+     * @param userId 
+     * @param seed 
+     * @param name 
+     * @param description 
+     * @param enabled 
+     * @returns BlockchainWalletAccount
+     */
+   public async generateWalletAccount(userId:number, seeed:string, name: string, description: string, index:number, enabled: boolean):Promise<BlockchainWalletAccount> {
+    
+    throw new WPError(WG_ERROR_INTERNAL_SERVER,"createWalletAccount(userId:number, walletId:number, name: string, description: string, index:number, enabled: boolean) is not suppored in "+BananoAccountService.name); 
+}
+
   /**
      * 
      * @param userId 
@@ -21,9 +36,9 @@ export class BananoAccountService implements BlockchainAccountApi {
      * @param enabled 
      * @returns BlockchainWalletAccount
      */
-   public async createWalletAccount(userId:number, walletId:number, name: string, description: string, enabled: boolean):Promise<BlockchainWalletAccount> {
+   public async createWalletAccount(userId:number, walletId:number, name: string, description: string, index:number, enabled: boolean):Promise<BlockchainWalletAccount> {
     
-        throw new WPError(WG_ERROR_INTERNAL_SERVER,"createWalletAccount(userId:number, walletId:number, name: string, description: string, enabled: boolean) is not suppored in "+BananoAccountService.name); 
+        throw new WPError(WG_ERROR_INTERNAL_SERVER,"createWalletAccount(userId:number, walletId:number, name: string, description: string, index:number, enabled: boolean) is not suppored in "+BananoAccountService.name); 
    }
 
    /**
@@ -38,7 +53,7 @@ export class BananoAccountService implements BlockchainAccountApi {
     * @param enabled 
     * @returns BlockchainWalletAccount
     */
-    public async  createWalletAccountWithSecrets(userId:number, walletId:number, name: string, description: string, address: string, secret: string, publicKey: string, enabled: boolean):Promise<BlockchainWalletAccount> {
+    public async  createWalletAccountWithSecrets(userId:number, walletId:number, name: string, description: string, index:number, address: string, secret: string, publicKey: string, enabled: boolean):Promise<BlockchainWalletAccount> {
         
         let bananoWalletAccount:BananoAccount = {
             id: "",
@@ -47,6 +62,7 @@ export class BananoAccountService implements BlockchainAccountApi {
             address: address,
             secret:secret,
             publicKey:publicKey,
+            index:index,
             balance: new BigNumber(0),
             pending: new BigNumber(0),
             enabled: enabled,

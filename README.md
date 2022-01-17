@@ -1,13 +1,15 @@
 <p align="center">
-  <a href="http://wodoplatform.io/" target="blank"><img src="https://github.com/wodo-platform/wodo-docs/blob/main/images/wodo_logo.png" width="320" alt="Wodo Platform" /></a>
+  <a href="https://wodo.io/" target="blank"><img src="https://github.com/wodo-platform/wg-web-ui/blob/master/app/img/_src/branding/logo_purple.png" width="320" alt="Wodo Platform" /></a>
 </p>
 
+<div align="center">
 <h2> Wodo Platform Blockchain Banano Engine
  </h2>
+ </div>
 
 <div align="center">
   <h4>
-    <a href="#">
+    <a href="https://wodo.io/">
       Website
     </a>
     <span> | </span>
@@ -27,12 +29,24 @@
       Contributing
     </a>
     <span> | </span>
-    <a href="#">
-      Reddit
+    <a href="https://twitter.com/wodoio">
+      Twitter
     </a>
     <span> | </span>
-    <a href="#">
-      Twitter
+    <a href="https://t.me/wodoio">
+      Telegram
+    </a>
+    <span> | </span>
+    <a href="https://discord.gg/fbyns8Egpb">
+      Discourd
+    </a>
+    <span> | </span>
+    <a href="https://wodoio.medium.com/">
+      Medium
+    </a>
+    <span> | </span>
+    <a href="https://www.reddit.com/r/wodoio">
+      Reddit
     </a>
   </h4>
 </div>
@@ -67,7 +81,7 @@ To be able to add wodo-nodejs-persistance as npm dependency, you need to authent
 If GitHub Packages is not your default package registry for using npm and you want to use the npm audit command, we recommend you use the --scope flag with the owner of the package when you authenticate to GitHub Packages.
 
 ```bash
-$ npm login --scope=@wodo-platform --registry=https://npm.pkg.github.com --u serhattanrikut --p your_token 
+$ npm login --scope=@wodo-platform --registry=https://npm.pkg.github.com --u your_git_user --p your_token 
 ```
 
 Once you login successfully, you can run "npm install" command and start to develop your features. 
@@ -136,7 +150,7 @@ Email (this IS public): wodo-platform@users.noreply.github.com
 Once you log in successfully, you will see the messafe below:
 
 ```bash
-Logged in as serhattanrikut to scope @wodo-platform on https://npm.pkg.github.com/.
+Logged in as your_git_user to scope @wodo-platform on https://npm.pkg.github.com/.
 ```
 Publish the package:
 

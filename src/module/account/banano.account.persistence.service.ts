@@ -67,6 +67,7 @@ export class BananoAccountPersistenceService {
       description: payload.description,
       secret: payload.secret,
       publicKey: payload.publicKey,
+      index:0,
       enabled: payload.enabled,
       deleted: false,
       balance: 0,

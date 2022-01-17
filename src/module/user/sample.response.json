@@ -1,10 +1,10 @@
 {
     "user": {
         "id": 2,
-        "email": "serhat.tanrikut@gmail.com",
+        "email": "aaaa.bbbb@gmail.com",
         "image": null,
         "password": "$argon2i$v=19$m=4096,t=3,p=1$Y2fDUzT5WMj6QqB1xFuZVQ$kNzNWIGxdPW8mlnNsZ99s6UcO4f9EJe4sVQSY9hdIWc",
-        "username": "serhat",
+        "username": "aaaa",
         "deleted": false,
         "createdAt": "2021-04-28T21:59:50.690Z",
         "updatedAt": "2021-04-28T21:59:50.690Z",

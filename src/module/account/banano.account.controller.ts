@@ -19,7 +19,8 @@ export class BananoAccountController {
   @ApiResponse({ status: 403, description: 'Forbidden.' })
   @Post()
   async create(@User('id') userId: number, @Body() accountData: BananoAccountCreateDto) {
-    return await this.accountService.createWalletAccount(userId,accountData.walletId,accountData.name,accountData.description,accountData.enabled);
+    return await this.accountService.createWalletAccount(userId,accountData.walletId,accountData.name,accountData.description,accountData.index,
+      accountData.enabled);
   }
 
   @ApiOperation({ summary: 'Create account' })
@@ -28,7 +29,7 @@ export class BananoAccountController {
   @Post('secret')
   async createWithSecrets(@User('id') userId: number, @Body() accountData: BananoAccountCreateDto) {
     return await this.accountService.createWalletAccountWithSecrets(userId,accountData.walletId,accountData.name,
-      accountData.description,accountData.address,accountData.secret,accountData.publicKey,accountData.enabled);
+      accountData.description,accountData.index, accountData.address,accountData.secret,accountData.publicKey,accountData.enabled);
   }
 
 

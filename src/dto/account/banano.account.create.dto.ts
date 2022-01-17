@@ -6,6 +6,7 @@ export class BananoAccountCreateDto {
   secret: string;
   publicKey: string;
   description: string;
+  index:number;
   enabled: boolean;
   deleted: boolean;
   walletId: number;
